@@ -8,6 +8,16 @@ export function middleware(request: NextRequest) {
     const response = NextResponse.next();
     response.headers.set("Access-Control-Allow-Origin", "*");
     response.headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
+    // response.headers.set(
+    //   "Access-Control-Allow-Headers",
+    //   "Content-Type, Content-Disposition"
+    // );
+    // Content-Disposition: attachment; filename="qr.png"; filename*=UTF-8''qr.png
+    response.headers.set(
+      "Content-Disposition",
+      "attachment; filename=thirteen.svg"
+    );
+
     return response;
   }
 
