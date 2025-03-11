@@ -7,6 +7,8 @@ export function middleware(request: NextRequest) {
   if (url.endsWith("/thirteen.svg")) {
     const response = NextResponse.next();
     // response.headers.set("Access-Control-Allow-Origin", "*");
+    // delete access-control-allow-origin
+    response.headers.delete("Access-Control-Allow-Origin");
     // response.headers.set("Access-Control-Allow-Methods", "GET, OPTIONS");
     // response.headers.set(
     //   "Access-Control-Allow-Headers",
